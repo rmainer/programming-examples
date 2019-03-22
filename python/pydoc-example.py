@@ -4,7 +4,7 @@
 
 class Arithmetic:
 	"""
-	Aritmetic example class
+	Arithmetic example class
 	"""
 
 	def __init__(self):
