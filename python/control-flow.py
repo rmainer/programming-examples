@@ -2,6 +2,11 @@
 
 a = 1
 
+# ternary operator
+is_nice = True
+state = "nice" if is_nice else "not nice"
+print(state)
+
 # if-statement
 if a < 1:
 	pass

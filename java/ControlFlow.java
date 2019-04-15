@@ -6,6 +6,9 @@ public class ControlFlow {
 		
 		int a = 1;
 		
+		// ternary operator
+		boolean b = (a == 1) ? true : false;
+
 		// if-statement
 		if(a < 0) {
 			System.out.println("minor");
@@ -18,7 +21,7 @@ public class ControlFlow {
 		}
 		
 		// switch-statement
-        int i=2;
+    int i=2;
         
 		switch(i){
 			case 0:
