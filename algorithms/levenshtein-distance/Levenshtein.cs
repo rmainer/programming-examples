@@ -13,8 +13,8 @@ namespace Levenshtein
             int[,] d = new int[n1, n2];
             Array.Clear(d, 0, n1 * n2);
 
-            for (int y = 0; y < n1; y++) d[y, 0] = y;
-            for (int x = 0; x < n1; x++) d[0, x] = x;
+            for (int y = 1; y < n1; y++) d[y, 0] = y;
+            for (int x = 1; x < n1; x++) d[0, x] = x;
 
             for (int y = 1; y < n1; y++)
             {

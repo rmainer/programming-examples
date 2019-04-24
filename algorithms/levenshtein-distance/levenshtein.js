@@ -5,8 +5,8 @@ function levenshtein(w1 ,w2) {
 	var n2 = w2.length + 1;
 	var d = Array(n1).fill(0).map(_ => Array(n2).fill(0));
 
-	for(let y=0; y<n1; y++) d[y][0] = y;
-	for(let x=0; x<n2; x++) d[0][x] = x;
+	for(let y=1; y<n1; y++) d[y][0] = y;
+	for(let x=1; x<n2; x++) d[0][x] = x;
 
 	for(let y=1; y<n1; y++) {
 		for(let x=1; x<n2; x++) {

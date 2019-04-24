@@ -13,8 +13,8 @@
 		$n2 = strlen($w2) + 1;
 		$d = array_fill(0, $n1, array_fill(0, $n2, 0));
 
-		for($y=0; $y<$n1; $y++) $d[y][0] = y;
-		for($x=0; $x<$n2; $x++) $d[0][x] = x;
+		for($y=1; $y<$n1; $y++) $d[y][0] = y;
+		for($x=1; $x<$n2; $x++) $d[0][x] = x;
 
 		for($y=1; $y<$n1; $y++) {
 			for($x=1; $x<$n2; $x++) {

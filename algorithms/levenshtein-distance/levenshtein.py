@@ -7,9 +7,9 @@ def levenshtein(w1, w2):
 	n2 = len(w2) + 1
 	d = [[0 for x in range(n2)] for y in range(n1)]
 	
-	for y in range(0, n1):
+	for y in range(1, n1):
 		d[y][0] = y
-	for x in range(0, n2):
+	for x in range(1, n2):
 		d[0][x] = x
 
 	for y in range(1, n1):

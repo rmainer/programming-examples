@@ -12,8 +12,8 @@ public class Levenshtein {
 		// see: https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.12.5
 		int[][] d = new int[n1][n2];
 
-		for(int y=0; y<n1; y++) d[y][0] = y;
-		for(int x=0; x<n2; x++) d[0][x] = x;
+		for(int y=1; y<n1; y++) d[y][0] = y;
+		for(int x=1; x<n2; x++) d[0][x] = x;
 
 		for(int y=1; y<n1; y++) {
 			for(int x=1; x<n2; x++) {
