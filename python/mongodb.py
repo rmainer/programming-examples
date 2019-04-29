@@ -10,7 +10,7 @@ from pprint import pprint
 
 
 # connect to MongoDB
-mngcl = MongoClient('mongodb://admin:VerrekteMongol@127.0.0.1/?authSource=admin&authMechanism=SCRAM-SHA-1')
+mngcl = MongoClient('mongodb://admin:password@127.0.0.1/?authSource=admin&authMechanism=SCRAM-SHA-1')
 
 # return databases
 print('Databases: {}'.format(mngcl.database_names()))
