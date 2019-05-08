@@ -1,5 +1,3 @@
-Imports System
-
 Module Levenshtein
 
     Function Levenshtein(ByVal w1 As String, ByVal w2 As String) As UInteger
