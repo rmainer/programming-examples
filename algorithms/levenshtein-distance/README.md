@@ -15,6 +15,7 @@ Implementations for the *levenshtein distance* in serveral programming languages
 * PowerShell: `powershell levenshtein.ps1`
 * Python: `python levenshtein.py`
 * Ruby: `ruby levenshtein.rb`
+* Rust: `rustc -o levenshtein levenshtein.rs`
 * Visual Basic: `vbc /t:exe /out:Levenshtein.exe Levenshtein.vb`
 
 Note:
