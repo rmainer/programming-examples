@@ -6,6 +6,7 @@ Implementations for the *levenshtein distance* in serveral programming languages
 * C: `gcc -Wall -ansi -o levenshtein levenshtein.c`
 * C++: `g++ -o levenshtein levenshtein.cpp`
 * C#: `csc /t:exe /out:Levensthein.exe Levenshtein.cs`
+* Go: `go build levenshtein.go`
 * Java: `java Levenshtein.java`
 * JavaScript: `node levenshtein.js`
 * Lua: `lua levenshtein.lua`
