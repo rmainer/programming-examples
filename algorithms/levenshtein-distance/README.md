@@ -4,6 +4,7 @@ Implementations for the *levenshtein distance* in serveral programming languages
 
 * Bash: `bash levenshtein.sh`
 * C: `gcc -Wall -ansi -o levenshtein levenshtein.c`
+* C++: `g++ -o levenshtein levenshtein.cpp`
 * C#: `csc /t:exe /out:Levensthein.exe Levenshtein.cs`
 * Java: `java Levenshtein.java`
 * JavaScript: `node levenshtein.js`
