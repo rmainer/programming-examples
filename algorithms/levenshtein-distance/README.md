@@ -9,6 +9,7 @@ Implementations for the *levenshtein distance* in serveral programming languages
 * Go: `go build levenshtein.go`
 * Java: `java Levenshtein.java`
 * JavaScript: `node levenshtein.js`
+* Kotlin: `kotlinc levenshtein.kt`
 * Lua: `lua levenshtein.lua`
 * Pascal: `fpc -olevenshtein levenshtein.pas`
 * Perl: `perl levenshtein.pl`
