@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Vue.js Example</title>
+		<style>
+			.red {
+				border: 2px solid red;
+			}
+			.green {
+				border: 2px solid green;
+			}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+
+	<body>
+		<div id="root">
+			<h1>{{ title }}</h1>
+			<div>{{ greeting }}</div>
+			<input v-model="greeting">
+			<div v-if="count === 1">Rot</div>
+			<div v-else-if="count === 2">Gelb</div>
+			<div v-else>Grün</div>
+			<div v-show="count === 2">v-show</div> <!-- div exists, but display:none -->
+			<!-- <input v-model="email" :class="{red: email.length < 2}"> -->
+			<p v-text="email"></p> <!-- same as {{ email }} -->
+			<p v-html="email"></p> <!-- HTML is also possible -->
+			<p v-once>{{ email }}</p> <!-- constant value -->
+			<input v-model="email" :class="[email.length < 2 ? 'red' : 'green']">
+			<button v-bind:disabled="email.length < 2">Submit</button> <!-- button is disabled (HTML-attribute) if email.length < 2, "v-bind" is optional -->
+			<ul>
+				<li v-for="cat in cats">{{ cat | capitalize | kittyfy }}</li> <!-- output is piped to function 'capitalize' -->
+			</ul>
+			<ul>
+					<li v-for="dog in dogs">{{ dog.name }}</li>
+			</ul>
+			<input v-model="newCat" v-on:keyup.enter="addKitty"><button v-on:click="addKitty">+ ADD</button> <!-- instead of "v-on:click" is also "@click" possible -->
+			<button @click="removeKitty">- REMOVE</button>
+			<p>{{ kittyfyName }}</p>
+			<cat-list :cats="cats" />  <!-- short for v-bind:cats -->
+		</div>
+	</body>
+
+	<script>
+		Vue.component('cat-list', {
+			props: ['cats'], 
+			template: `
+				<ul>
+					<li v-for="cat in cats">{{ cat }}</li>
+				</ul>
+				`
+		})
+
+
+		app = new Vue({
+			el: '#root',
+			component: [
+				'cat-list'
+			],
+			data: {
+				cats: ['kitkat', 'fish', 'henry'],
+				dogs: [{name: 'bello'}, {name: 'hasso'}],
+				count: 1,
+				email: 'rm@null.de',
+				greeting: "Hallo World!",
+				newCat: '',
+				title: "Vue.js title",
+			},
+			methods: {
+				addKitty: function() {
+					this.cats.push(this.newCat);
+					this.newCat = '';
+				},
+				removeKitty: function() {
+					this.cats.pop();
+				}
+			},
+			filters: {
+				capitalize: function(value) {
+					return value.toUpperCase();
+				},
+				kittyfy: function(value) {
+					return value + 'y';
+				}
+			},
+			computed: {
+				kittyfyName: function() {
+					if(this.newCat.length > 1) {
+						return this.newCat + 'y';
+					}
+				}
+			},
+			created: function() {
+				console.log('created');
+			},
+			mounted: function() {
+				console.log('mounted'); // mounted into the dom
+			},
+			updated: function() {
+				console.log('updated'); // if the state has changed
+			},
+			destroyed: function() {
+				console.log('destroyed');
+			}
+		});
+	</script>
+</html>
