@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 # optparse example, a replacement for getopt
-# try: module-optparse -h
 
 import optparse
 import sys
